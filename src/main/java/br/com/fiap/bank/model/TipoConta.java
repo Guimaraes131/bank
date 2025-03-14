@@ -5,6 +5,9 @@ public enum TipoConta {
     POUPANCA("Poupanca"),
     SALARIO("Salario");
 
-    TipoConta(String tipoConta) {
+    private String tipoConta;
+
+    TipoConta(String valor) {
+        tipoConta = valor;
     }
 }

@@ -1,17 +1,29 @@
 package br.com.fiap.bank.model;
 
-import java.math.BigDecimal;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Entity
 public class Conta {
-    private int numero;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long numero;
+
     private int agencia;
     private String nomeTitular;
-    private String dataAbertura;
+    private LocalDate dataAbertura;
     private BigDecimal saldoInicial;
     private boolean ativa;
     private TipoConta tipo;
 
-    public Conta(int numero, int agencia, String nomeTitular, String dataAbertura, BigDecimal saldoInicial, boolean ativa, TipoConta tipo) {
+    public Conta() {
+    }
+
+    public Conta(int numero, int agencia, String nomeTitular, LocalDate dataAbertura, BigDecimal saldoInicial, boolean ativa, TipoConta tipo) {
         this.numero = numero;
         this.agencia = agencia;
         this.nomeTitular = nomeTitular;
@@ -19,10 +31,6 @@ public class Conta {
         this.saldoInicial = saldoInicial;
         this.ativa = ativa;
         this.tipo = tipo;
-    }
-
-    public int getNumero() {
-        return numero;
     }
 
     public int getAgencia() {
@@ -33,7 +41,11 @@ public class Conta {
         return nomeTitular;
     }
 
-    public String getDataAbertura() {
+    public long getNumero() {
+        return numero;
+    }
+
+    public LocalDate getDataAbertura() {
         return dataAbertura;
     }
 
