@@ -10,4 +10,8 @@ public enum TipoConta {
     TipoConta(String valor) {
         tipoConta = valor;
     }
+
+    public String getTipoConta() {
+        return tipoConta;
+    }
 }
