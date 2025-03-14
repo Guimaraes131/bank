@@ -2,10 +2,10 @@ package br.com.fiap.bank.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Random;
 
 public class Conta {
     private long numero;
-
     private int agencia;
     private String nomeTitular;
     private LocalDate dataAbertura;
@@ -16,8 +16,8 @@ public class Conta {
     public Conta() {
     }
 
-    public Conta(int numero, int agencia, String nomeTitular, LocalDate dataAbertura, BigDecimal saldoInicial, boolean ativa, TipoConta tipo) {
-        this.numero = numero;
+    public Conta(int agencia, String nomeTitular, LocalDate dataAbertura, BigDecimal saldoInicial, boolean ativa, TipoConta tipo) {
+        this.numero = Math.abs( new Random().nextLong() );
         this.agencia = agencia;
         this.nomeTitular = nomeTitular;
         this.dataAbertura = dataAbertura;
