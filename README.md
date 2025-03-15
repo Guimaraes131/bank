@@ -3,6 +3,7 @@
 ## GET
 - http://localhost:8080/conta 
 - http://localhost:8080/conta/{id}
+- http://localhost:8080/conta/cpf/{cpf}
 - http://localhost:8080/ -> usada para mostrar os membros do grupo
 
 ## POST

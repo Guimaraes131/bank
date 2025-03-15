@@ -95,7 +95,6 @@ public class ContaController {
         return ResponseEntity.status(400).body("mensagem: valor inválido ou conta inativa");
     }
 
-
     @DeleteMapping("{id}")
     public void destroy(@PathVariable Long id) {
         Conta conta = getContaPorId(id);
@@ -103,21 +102,6 @@ public class ContaController {
         conta.setAtiva(false);
         repository.save(conta);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     private Conta getContaPorId(Long id) {
         return repository.findById(id)
