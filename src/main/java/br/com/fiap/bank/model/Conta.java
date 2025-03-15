@@ -24,7 +24,11 @@ public class Conta {
     private boolean ativa;
     private String tipoConta;
 
-    public void setAtiva(boolean ativa) {
-        this.ativa = ativa;
+    public void depositar(double valor) {
+        this.saldoInicial += valor;
+    }
+
+    public void sacar(double valor) {
+        this.saldoInicial -= valor;
     }
 }
